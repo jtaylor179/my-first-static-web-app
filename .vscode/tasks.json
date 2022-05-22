@@ -3,41 +3,9 @@
 	"tasks": [
 		{
 			"type": "func",
-			"command": "host start",
+			"command": "host start --prefix api/dist --port 7071",
 			"problemMatcher": "$func-node-watch",
-			"isBackground": true,
-			"dependsOn": "npm build (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
+			"isBackground": true
 		},
-		{
-			"type": "shell",
-			"label": "npm build (functions)",
-			"command": "npm run build",
-			"dependsOn": "npm install (functions)",
-			"problemMatcher": "$tsc",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
-		},
-		{
-			"type": "shell",
-			"label": "npm install (functions)",
-			"command": "npm install",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
-		},
-		{
-			"type": "shell",
-			"label": "npm prune (functions)",
-			"command": "npm prune --production",
-			"dependsOn": "npm build (functions)",
-			"problemMatcher": [],
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
-		}
 	]
 }
